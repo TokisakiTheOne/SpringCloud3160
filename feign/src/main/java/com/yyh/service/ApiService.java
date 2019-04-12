@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author YanYuHang
  * @create 2019-04-11-16:20
  */
-@FeignClient(value = "eurekaclient")
+@FeignClient(value = "eurekaclient",fallback = ApiServiceError.class)
 public interface ApiService {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     String index();
